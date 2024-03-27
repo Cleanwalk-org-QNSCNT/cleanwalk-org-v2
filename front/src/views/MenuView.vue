@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import navBar from '@/components/navBar.vue';
-import Profile from '@/components/Profile.vue';
+import Menus from '@/components/Menu.vue';
 import TopBar from '@/components/TopBar.vue';
 </script>
+
 <template>
     <TopBar />
+    <Menus />
     <navBar />
-    <Profile />
 </template>

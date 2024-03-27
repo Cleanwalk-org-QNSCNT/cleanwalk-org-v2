@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import iconAdd from '@/components/icons/icon-add.vue';
-import iconArticle from '@/components/icons/icon-article.vue';
+import iconDiscover from '@/components/icons/icon-discover.vue';
 import iconMap from '@/components/icons/icon-map.vue';
-import iconProfile from '@/components/icons/icon-profile.vue';
+import iconBurger from '@/components/icons/icon-burger.vue';
 
 import { ref, onMounted, onUnmounted } from 'vue';
 import { useRoute } from 'vue-router';
@@ -33,16 +33,16 @@ onMounted(() => {
                     <div>Ajouter</div>
                 </router-link>
             </li>
-            <li :class="{ 'active': currentPage === 'article'}">
-                <router-link to="/article" class="redirect">
-                    <iconArticle />
-                    <div>Articles</div>
+            <li :class="{ 'active': currentPage === 'articles' || currentPage === 'associations'}">
+                <router-link to="/articles" class="redirect">
+                    <iconDiscover />
+                    <div>Découvrir</div>
                 </router-link>
             </li>
-            <li :class="{ 'active': currentPage === 'profile'}" >
-                <router-link to='profile' class="redirect">
-                    <iconProfile />
-                    <div>Profile</div>
+            <li :class="{ 'active': currentPage === 'menu'}" >
+                <router-link to='menu' class="redirect">
+                    <iconBurger />
+                    <div>Menu</div>
                 </router-link>
             </li>
         </ul>
@@ -78,6 +78,7 @@ onMounted(() => {
                 justify-content: center;
                 flex-direction: column;
                 color: var(--text-color-nav);
+                
                 width: 100%;
                 
                 .redirect {
@@ -91,11 +92,12 @@ onMounted(() => {
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
-                    
+                    height: 100%;
                 }
 
                 &.active {
                     stroke: var(--text-color-nav-active);
+                    fill: var(--text-color-nav-active);
                     color: var(--text-color-nav-active);
                     
                     .redirect {

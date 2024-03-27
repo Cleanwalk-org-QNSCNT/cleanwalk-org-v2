@@ -28,14 +28,29 @@ const router = createRouter({
       component: () => import('../views/AddView.vue')
     },
     {
-      path: '/article',
-      name: 'article',
-      component: () => import('../views/ArticleView.vue')
+      path: '/articles',
+      name: 'articles',
+      component: () => import('../views/ArticlesView.vue')
     },
     {
-      path: '/profile',
-      name: 'profile',
-      component: () => import('../views/ProfileView.vue')
+      path: '/associations',
+      name: 'associations',
+      component: () => import('../views/AssoListView.vue')
+    },
+    {
+      path: '/menu',
+      name: 'menu',
+      component: () => import('../views/MenuView.vue')
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/LoginView.vue')
+    },
+    {
+      path: '/logout',
+      name: 'logout',
+      component: () => import('../views/SignupView.vue')
     },
   ]
 })

@@ -2,11 +2,15 @@
 import iconLeftArrow from './icons/icon-left-arrow.vue';
 import iconInfo from './icons/icon-info.vue';
 
+const props = defineProps({
+  backUrl: String,
+})
+
 </script>
 
 <template>
   <div class="top-bar">
-    <router-link class="back" to="/">
+    <router-link class="back" :to="backUrl" v-if="backUrl">
       <iconLeftArrow />
     </router-link>
     <img src="../assets/logo.svg" alt="logo">
@@ -20,9 +24,9 @@ import iconInfo from './icons/icon-info.vue';
 @import '@/assets/base.scss';
 
 .top-bar {
-  position: sticky;
-  top: 0;
+  position: fixed;
   left: 0;
+  top: 0;
   width: 100vw;
   z-index: 999;
   background-color: var(--color-primary);
